@@ -1,0 +1,24 @@
+sistema-di-navigazione 2
+
+Raspberry 3B+ con RaspbianOS Bullseye
+
+RaspAP access point
+user admin
+pw XXXXXXX
+
+SSID NMEA-server
+IP 10.3.141.1
+pw XXXXXXX
+
+pypilot con MPU9255 si attacca a NMEA-server con IP 10.3.141.164,
+dati su porta 20220 TCP
+
+per openCPN
+UBLOX-GPS /dev/ttyACM1 57600 da 10.3.141.1 porta 10110
+[dAISy AIS /dev/ttyACM0 38400 da 10.3.141.1 porta 20220]
+riceve AIS su 10110
+pypilot MPU9255 da 10.3.141.164 porta 20220
+
+Navionics
+dati da NMEA-server (10.3.141.1, porta 10110, gps+ais)
+
