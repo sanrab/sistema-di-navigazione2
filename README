@@ -2,6 +2,7 @@ sistema-di-navigazione 2
 
 RaspberryZeroW con RaspAP, SSID polaris-net, IP 10.10.10.1
 kplex (NMEA multiplexer):
+
 input:
 USB
 - Seatalk (/dev/ttyUSB0)/Ublox (/dev/ttyACM0, 57600)
@@ -9,9 +10,21 @@ USB
 
 output:
 - rs422 per AIS su Raymarine C-80 (38400)
-- su porta 10110
-
-NMEA repeater su lcd seriale 4x20
+- tcp su porta 10110
 
 ok con opencpn (Windows, Linux, Android)
 ok con Navionics (Android)
+
+Rasoberry 3B+ con RaspAP, SSID polaris-net, IP 10.10.10.1
+signalk server + kplex (NMEA multiplexer):
+
+input:
+USB
+- Seatalk (/dev/ttyUSB0)/Ublox (/dev/ttyACM0, 57600)
+- dAISy (/dev/ttyAMA0, 38400)
+
+output:
+- rs422 per AIS su Raymarine C-80 (38400)
+- tcp su porta 20220
+
+signalk server legge kplex-flow (dati) con tcp su porta 20220
